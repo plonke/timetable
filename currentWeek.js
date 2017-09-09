@@ -1,0 +1,1 @@
+module.exports = moment().week() % 2 === 0 ? 2 : 1
