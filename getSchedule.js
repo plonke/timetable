@@ -20,7 +20,14 @@ module.exports = (params) => {
         if (item.day() === params.day && item.isAfter(moment().subtract(1, 'days'))) {
             let day = item.locale('ru').format('D MMM')
             if (srs.length === 0) {
-                day += '(через ' + item.toNow(true) +')'
+                let diff = item.diff(moment())
+                if (diff === 0) {
+                    day += ' (<b>Сегодня</b>)'
+                } else if (diff === 1) {
+                    day += ' (<b>Завтра</b>)'
+                } else {
+                    day += ' (через ' + (item.toNow(true) + 1) +')'
+                }
             }
             srs.push(day)
         }
