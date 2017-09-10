@@ -4,6 +4,10 @@ global.currentWeek = require('./currentWeek')
 const TelegramBot = require('node-telegram-bot-api')
 const getKeyboard    = require('./getKeyboard')
 const getSchedule = require('./getSchedule')
+const express = require('express')
+const app = express()
+
+app.listen(process.env.PORT || 3000, () => {return 'It works'})
 
 const token = '255704702:AAGm_IG22M0tBeWp8JfhYKxj0EJFe18-IQQ';
 const bot = new TelegramBot(token, {polling: true});
