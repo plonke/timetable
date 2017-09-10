@@ -12,7 +12,6 @@ global.bot = new TelegramBot(TOKEN, {
     }
 });
 
-bot
-    .setWebHook(`${url}/bot${TOKEN}`)
-    .on('message', require('./handlers/message'))
-    .on('callback_query', require('./handlers/callbackQuery'))
+bot.setWebHook(`${url}/bot${TOKEN}`)
+bot.on('message', require('./handlers/message'))
+bot.on('callback_query', require('./handlers/callbackQuery'))
