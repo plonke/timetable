@@ -26,7 +26,7 @@ module.exports = (params) => {
                 } else if (diff === 1) {
                     day += ' (<b>Завтра</b>)'
                 } else {
-                    day += ' (через ' + (item.add(1, 'days').toNow(true)) +')'
+                    day += ' (через ' + (item.clone().add(1, 'days').toNow(true)) +')'
                 }
             }
             srs.push(day)
