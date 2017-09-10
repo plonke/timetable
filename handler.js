@@ -1,4 +1,5 @@
 module.exports = (req, res) => {
+    res.send('work!')
     const TelegramBot = require('node-telegram-bot-api')
     const getKeyboard    = require('./getKeyboard')
     const getSchedule = require('./getSchedule')
