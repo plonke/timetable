@@ -15,6 +15,18 @@ module.exports = (params) => {
         schedule += '\n\r'
     })
 
+    let srs = []
+    data.srs.map(day => {
+        if (day.day() === params.day && day.isAfter(moment().subtract(1, 'days'))) {
+            srs.push(day.locale('ru').format('D MMM'))
+        }
+    })
+
+    if (srs.length > 0) {
+        schedule += '\n\r'
+        schedule += srs.join(', ')
+    }
+
     if (schedule === '') {
         schedule = 'В этот день нет занятий 🌚'
     }

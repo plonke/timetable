@@ -204,6 +204,33 @@ module.exports = () => {
             'CK'
         ],
 
+        srs: [
+            moment('2017-09-14'),
+            moment('2017-09-19'),
+            moment('2017-09-22'),
+            moment('2017-09-25'),
+            moment('2017-09-27'),
+
+            moment('2017-10-07'),
+            moment('2017-10-10'),
+            moment('2017-10-13'),
+            moment('2017-10-19'),
+            moment('2017-10-28'),
+            moment('2017-10-30'),
+
+            moment('2017-11-01'),
+            moment('2017-11-09'),
+            moment('2017-11-14'),
+            moment('2017-11-17'),
+            moment('2017-11-20'),
+            moment('2017-11-22'),
+
+            moment('2017-12-02'),
+            moment('2017-12-05'),
+            moment('2017-12-08'),
+            moment('2017-12-14')
+        ],
+
         times: [{
             from: moment({hour: 8, minute: 15, seconds: 0}),
             to: moment({hour: 9, minute: 45, seconds: 0})
