@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = (req, res) => {
     const TelegramBot = require('node-telegram-bot-api')
     const getKeyboard    = require('./getKeyboard')
     const getSchedule = require('./getSchedule')
@@ -9,7 +9,7 @@ module.exports = () => {
         webHook: true
     });
 
-    bot.sendMessage(125399191, 'it works!')
+    bot.sendMessage(125399191, JSON.stringify(req))
 
     bot.onText(/\/clear/, (msg, match) => {
         bot.sendMessage(msg.chat.id, 'cleared', {
@@ -83,4 +83,6 @@ module.exports = () => {
         bot.editMessageText(schedule, options)
 
     })
+
+
 }
