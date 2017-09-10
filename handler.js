@@ -9,7 +9,8 @@ module.exports = (req, res) => {
         polling: false
     });
 
-    bot.openWebHook().then((w) => {
+    bot.openWebHook()
+        .then((w) => {
         bot.sendMessage(125399191, 'w' + w)
         bot.sendMessage(125399191, 'req' + JSON.stringify(req))
     })

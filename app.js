@@ -3,12 +3,22 @@ global.moment      = require('moment')
 global.currentWeek = require('./currentWeek')
 
 const handler = require('./handler')
-const express = require('express')
-const app = express()
 
-app.get('/', handler)
-app.listen(process.env.PORT || 3000)
+//
+const TOKEN = process.env.TELEGRAM_TOKEN || '255704702:AAGm_IG22M0tBeWp8JfhYKxj0EJFe18-IQQ';
+const TelegramBot = require('node-telegram-bot-api')
+const options = { webHook: { port: process.env.PORT }}
 
+const url = process.env.APP_URL || 'https://pawlo-timetable.herokuapp.com';
+const bot = new TelegramBot(TOKEN, options);
+
+bot.setWebHook(`${url}/bot${TOKEN}`);
+
+bot.on('message', function onMessage(msg) {
+    bot.sendMessage(msg.chat.id, 'I am alive on Heroku!');
+});
+
+//
 // const pool = new Pool({
 //     user: 'dyecvowfqxalaq',
 //     host: 'ec2-54-247-120-169.eu-west-1.compute.amazonaws.com',
