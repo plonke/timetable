@@ -19,7 +19,7 @@ module.exports = (params) => {
     data.srs.map((item, index) => {
         if (item.day() === params.day && item.isAfter(moment().subtract(1, 'days'))) {
             let day = item.locale('ru').format('D MMM')
-            if (index === 0) {
+            if (srs.length === 0) {
                 day += '(через ' + item.toNow() +')'
             }
             srs.push(day)
