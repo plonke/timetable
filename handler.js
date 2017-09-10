@@ -12,6 +12,8 @@ module.exports = () => {
         }
     });
 
+    bot.sendMessage(125399191, 'it works!')
+
     bot.onText(/\/clear/, (msg, match) => {
         bot.sendMessage(msg.chat.id, 'cleared', {
             reply_markup: {
