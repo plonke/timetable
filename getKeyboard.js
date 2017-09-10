@@ -68,7 +68,7 @@ function getWeekButtons(data) {
             day: data.day
         })
     }, {
-        text: data.week === 1 ? '👉 ️Нечетная 👈' : 'Нечетная',
+        text: data.week === 1 ? '👉 Нечетная 👈' : 'Нечетная',
         callback_data: JSON.stringify({
             today: false,
             tomorrow: false,
