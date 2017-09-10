@@ -6,10 +6,7 @@ module.exports = () => {
     const token = '255704702:AAGm_IG22M0tBeWp8JfhYKxj0EJFe18-IQQ';
     const bot = new TelegramBot(token, {
         polling: false,
-        webHook: {
-            host: 'https://pawlo-timetable.herokuapp.com',
-            port: process.env.PORT || 3000
-        }
+        webHook: true
     });
 
     bot.sendMessage(125399191, 'it works!')
