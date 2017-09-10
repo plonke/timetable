@@ -18,7 +18,7 @@ module.exports = (msg) => {
     }
 
     if (/\/start/i.test(text)) {
-        let day = 1
+        let day = moment().day()
         let params = { week: currentWeek, day: day }
         let schedule = getSchedule(params)
         let options = {
