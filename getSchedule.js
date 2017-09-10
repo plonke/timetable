@@ -34,8 +34,8 @@ module.exports = (params) => {
     })
 
     if (srs.length > 0) {
-        schedule += '\n\r <b>СРС:</b>'
-        schedule += '\n\r ' + srs.join(', ')
+        schedule += '\n\r<b>СРС:</b>'
+        schedule += '\n\r' + srs.join(', ')
     }
 
     if (schedule === '') {
