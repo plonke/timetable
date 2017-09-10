@@ -5,11 +5,14 @@ module.exports = (req, res) => {
 
     const token = '255704702:AAGm_IG22M0tBeWp8JfhYKxj0EJFe18-IQQ';
     const bot = new TelegramBot(token, {
-        polling: false,
-        webHook: true
+        polling: false
     });
 
-    bot.sendMessage(125399191, JSON.stringify(req))
+    bot.openWebHook().then((w) => {
+        bot.sendMessage(125399191, 'w' + w)
+        bot.sendMessage(125399191, 'req' + JSON.stringify(req))
+    })
+
 
     bot.onText(/\/clear/, (msg, match) => {
         bot.sendMessage(msg.chat.id, 'cleared', {
