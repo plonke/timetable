@@ -1,0 +1,1 @@
+git add . && git commit -am 'v1.0.0' && git push heroku master
