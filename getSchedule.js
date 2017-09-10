@@ -16,15 +16,19 @@ module.exports = (params) => {
     })
 
     let srs = []
-    data.srs.map(day => {
-        if (day.day() === params.day && day.isAfter(moment().subtract(1, 'days'))) {
-            srs.push(day.locale('ru').format('D MMM'))
+    data.srs.map((item, index) => {
+        if (item.day() === params.day && item.isAfter(moment().subtract(1, 'days'))) {
+            let day = item.locale('ru').format('D MMM')
+            if (index === 0) {
+                day += '(через ' + item.toNow() +')'
+            }
+            srs.push(day)
         }
     })
 
     if (srs.length > 0) {
-        schedule += '\n\r'
-        schedule += srs.join(', ')
+        schedule += '\n\r <b>СРС:</b>'
+        schedule += '\n\r ' + srs.join(', ')
     }
 
     if (schedule === '') {
