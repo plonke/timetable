@@ -14,7 +14,7 @@ function getDayButtons(data) {
     for (let i = 0; i < texts.length; i++) {
         let text = ''
         if (data.day === i + 1) {
-            text = '🔘' + texts[i]
+            text = '☑️ ' + texts[i]
         } else {
             text = texts[i]
         }
