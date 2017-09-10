@@ -1,8 +1,9 @@
-const data = require('./data')()
+const data = require('./data')
 
 module.exports = (params) => {
-    let schedule = ''
     let week = params.week === 1 ? 'even' : 'odd'
+    let schedule = ''
+    let srs = []
 
     data.weeks[week][params.day].map(day => {
         schedule += '\n\r'
@@ -15,7 +16,6 @@ module.exports = (params) => {
         schedule += '\n\r'
     })
 
-    let srs = []
     data.srs.map(item => {
         if (item.day() === params.day && item.isAfter(moment().subtract(1, 'days'))) {
             let day = item.locale('ru').format('D MMM')
