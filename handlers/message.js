@@ -9,6 +9,14 @@ module.exports = (msg) => {
         })
     }
 
+    if (/\/time/i.test(text)) {
+        bot.sendMessage(msg.chat.id, moment().format('MMMM Do YYYY, h:mm:ss a'), 'cl eared', {
+            reply_markup: {
+                remove_keyboard: true
+            }
+        })
+    }
+
     if (/\/start/i.test(text)) {
         let day = 1
         let params = { week: currentWeek, day: day }
