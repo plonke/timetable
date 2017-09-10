@@ -14,7 +14,7 @@ function getDayButtons(data) {
     for (let i = 0; i < texts.length; i++) {
         let text = ''
         if (data.day === i + 1) {
-            text = '👉 ' + texts[i] + ' 👈'
+            text = '🔘' + texts[i]
         } else {
             text = texts[i]
         }
@@ -60,7 +60,7 @@ function getCommonButtons(data) {
 
 function getWeekButtons(data) {
     return [{
-        text: data.week === 2 ? '👉 Четная 👈' : 'Четная',
+        text: data.week === 2 ? '🔘Четная' : 'Четная',
         callback_data: JSON.stringify({
             today: false,
             tomorrow: false,
@@ -68,7 +68,7 @@ function getWeekButtons(data) {
             day: data.day
         })
     }, {
-        text: data.week === 1 ? '👉 Нечетная 👈' : 'Нечетная',
+        text: data.week === 1 ? '🔘Нечетная' : 'Нечетная',
         callback_data: JSON.stringify({
             today: false,
             tomorrow: false,
