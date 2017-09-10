@@ -3,7 +3,7 @@ module.exports = (query) => {
 
     bot.answerCallbackQuery({
         callback_query_id: query.id,
-        text: '🌕🌖🌗🌘🌚🌒🌓🌔🌕'
+        text: process.env.callbackQueryAnswer || '🌕🌖🌗🌘🌚🌒🌓🌔🌕'
     })
 
     let options = {
